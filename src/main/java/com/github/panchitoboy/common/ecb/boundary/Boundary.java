@@ -15,16 +15,20 @@ public abstract class Boundary<T> {
     @Inject
     Control<T> control;
 
+    public ClassHelper<T> getClassHelper() {
+        return entityClass;
+    }
+
     public Control<T> getControl() {
         return control;
     }
 
     public T find(Serializable id) {
-        return getControl().find(entityClass.getInjectionClass(), id);
+        return getControl().find(getClassHelper().getInjectionClass(), id);
     }
 
     public List<T> findAll() {
-        return getControl().findAll(entityClass.getInjectionClass());
+        return getControl().findAll(getClassHelper().getInjectionClass());
     }
 
     public T create(@Valid T entity) {
