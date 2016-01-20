@@ -25,7 +25,7 @@ public abstract class RestBoundary<T> extends Boundary<T> {
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public T find(@PathParam("id") long id) throws IOException {
+    public T find(@PathParam("id") long id) {
         T element = super.find(id);
         return element;
     }
