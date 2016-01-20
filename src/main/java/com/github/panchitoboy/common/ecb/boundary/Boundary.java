@@ -5,7 +5,6 @@ import com.github.panchitoboy.common.ecb.helper.ClassHelper;
 import java.io.Serializable;
 import java.util.List;
 import javax.inject.Inject;
-import javax.validation.Valid;
 
 public abstract class Boundary<T> {
 
@@ -31,12 +30,12 @@ public abstract class Boundary<T> {
         return getControl().findAll(getClassHelper().getInjectionClass());
     }
 
-    public T create(@Valid T entity) {
+    public T create(T entity) {
         getControl().create(entity);
         return entity;
     }
 
-    public T update(@Valid T entity) {
+    public T update(T entity) {
         getControl().update(entity);
         return entity;
     }
