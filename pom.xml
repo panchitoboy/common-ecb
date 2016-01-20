@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.panchitoboy</groupId>
     <artifactId>common-ecb</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
  
     <parent>
@@ -40,7 +40,7 @@
         <connection>scm:git:git@github.com:panchitoboy/common-ecb.git</connection>
         <developerConnection>scm:git:git@github.com:panchitoboy/common-ecb.git</developerConnection>
         <url>git@github.com:panchitoboy/common-ecb.git</url>
-        <tag>common-ecb-1.0.0</tag>
+        <tag>common-ecb-1.0.3</tag>
     </scm>
 
     <distributionManagement>
