@@ -1,7 +1,6 @@
 package com.github.panchitoboy.common.ecb.boundary;
 
 import java.io.IOException;
-import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -18,41 +17,36 @@ public abstract class RestBoundary<T> extends Boundary<T> {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response list() throws IOException {
-        List<T> list = super.findAll();
-        return Response.status(200).entity(list).build();
+        return Response.status(200).entity(findAll()).build();
     }
 
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public T find(@PathParam("id") long id) {
-        T element = super.find(id);
-        return element;
+    public Response element(@PathParam("id") long id) {
+        return Response.status(200).entity(find(id)).build();
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Override
-    public T create(T instance) {
-        super.create(instance);
-        return instance;
+    public Response insert(T instance) {
+        return Response.status(200).entity(create(instance)).build();
     }
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Override
-    public T update(T instance) {
-        return super.update(instance);
+    public Response renovate(T instance) {
+        return Response.status(200).entity(update(instance)).build();
     }
 
     @DELETE
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public T remove(@PathParam("id") long id) {
-        return super.remove(id);
+    public Response delete(@PathParam("id") long id) {
+        return Response.status(200).entity(remove(id)).build();
     }
 
 }
