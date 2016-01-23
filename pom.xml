@@ -57,16 +57,13 @@
     <properties>
         <java.min.version>1.8</java.min.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>        
-        <version.arquillian_core>1.1.4.Final</version.arquillian_core>
         <version.javaee_api>7.0</version.javaee_api>
-        <version.junit>4.11</version.junit>
+        <version.arquillian_core>1.1.10.Final</version.arquillian_core>
+        <version.arquillian_chameleon>1.0.0.Alpha6</version.arquillian_chameleon>
+        <version.junit>4.12</version.junit>
         <version.jersey>2.22.1</version.jersey>
     </properties>
 
-    <prerequisites>
-        <maven>${maven.min.version}</maven>
-    </prerequisites>  
-                        
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -101,10 +98,9 @@
         <dependency>
             <groupId>org.arquillian.container</groupId>
             <artifactId>arquillian-container-chameleon</artifactId>
-            <version>1.0.0.Alpha6</version>
+            <version>${version.arquillian_chameleon}</version>
             <scope>test</scope>
         </dependency>
-        <!-- jersey-client for test --> 
         <dependency>
             <groupId>org.glassfish.jersey.core</groupId>
             <artifactId>jersey-client</artifactId>
@@ -142,7 +138,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <version>3.3</version>
                 <configuration>
                     <source>${java.min.version}</source>
                     <target>${java.min.version}</target>
